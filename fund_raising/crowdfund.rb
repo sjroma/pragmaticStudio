@@ -28,34 +28,39 @@ class Project
   end
 end
 
-project1 = Project.new("Project ABC", 1000, 8500)
+class FundRequest
+  attr_reader :title
+  
+  def initialize(title)
+    @title = title
+    @projects = []
+  end
+  
+  def add_project(a_project)
+    @projects << a_project
+  end
+  
+  def request_funding
+    puts "There are #{@projects.size} projects that you could fund:"
+    @projects.each do |project|
+      puts project
+    end
+    @projects.each do |project|
+      project.increase_fund
+      project.decrease_fund
+      project.increase_fund
+      puts project
+    end
+  end
+end
 
+project1 = Project.new("Project ABC", 1000, 5000)
 project2 = Project.new("Project LMN", 500, 3000)
-
 project3 = Project.new("Project XYZ", 25, 75)
 
-puts project1
-puts project1.funds_needed
-puts project2
-puts project3
-project2.decrease_fund
-project3.increase_fund
-puts project2
-puts project3
-
-projects = [project1, project2, project3]
-puts "\nThere are #{projects.size} projects to be funded:"
-projects.each do |proj|
-  puts proj
-end
-
-projects.each do |proj|
-  puts proj.funding
-end
-
-projects.each do |proj|
-  proj.decrease_fund
-  proj.increase_fund
-  proj.increase_fund
-  puts proj
-end
+projects = FundRequest.new("VC-Friendly Start-up Projects")
+puts projects.title
+projects.add_project(project1)
+projects.add_project(project2)
+projects.add_project(project3)
+projects.request_funding
