@@ -95,6 +95,6 @@ the **variable** named _text_
 * An **instance** variable exists for the life of an **object**.
 * **Instance** methods have access to their object's **instance** variables.
 * Class names start with an **uppercase** letter and multi-word class names have each word capitalized 
-  Method names start with a **lowercase** letter    
-  Variable names start with a **lowercase** letter    
-  Instance variables start with an **@ sign**
+* Method names start with a **lowercase** letter    
+* Variable names start with a **lowercase** letter    
+* Instance variables start with an **@ sign**
