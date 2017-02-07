@@ -3,7 +3,7 @@
 ### Table of Contents
 * [Installing Ruby on Mac OS X](#installing-ruby-on-mac-os-x)
 * [Generate the core Ruby documentation](#generate-the-core-ruby-documentation)
-* [Ruby rules](#ruby rules n guidelines)
+* [Ruby rules](#ruby-rules-n-guidelines)
 * [Vocabulary](#vocabulary)
 
 # Installing Ruby on Mac OS X
