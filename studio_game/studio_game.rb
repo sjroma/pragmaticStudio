@@ -30,44 +30,48 @@ class Player
   end
 end
 
+class Game
+  attr_reader :title
+  
+  def initialize(title)
+    @title = title
+    @players = []
+  end
+  
+  def add_player(a_playa)
+    @players << a_playa
+  end
+  
+  def play
+    puts "\nThere are #{@players.size} players in #{@title}:"
+    @players.each do |player|
+      puts player
+    end
+    @players.each do |player|
+      player.blam
+      player.w00t
+      player.w00t
+      puts player
+    end
+  end
+end
+
 player1 = Player.new("moe")
-puts player1
-
 player2 = Player.new("larry", 60)
-puts player2
-
 player3 = Player.new("curly", 125)
-puts player3
-player3.blam
-puts player3
-player3.w00t
-puts player3
-puts player1.health
-puts player2.health
-puts player3.health
-#player2.name = "lawrence"
-puts player2.name
 
-players = [player1, player2, player3]
-puts "\nThere are #{players.size} players in the game:"
-players.each do |playa|
-  puts playa
-end
-players.each do |playa|
-  puts playa.health
-end
-players.each do |playa|
-  playa.blam
-  playa.w00t
-  playa.w00t
-  puts playa
-end
-players.pop
-player4 = Player.new("shemp", 90)
-players.push (player4)
-players.each do |playa|
-  playa.blam
-  playa.w00t
-  playa.w00t
-  puts playa
-end
+knuckleheads = Game.new("Knuckleheads")
+knuckleheads.add_player(player1)
+knuckleheads.add_player(player2)
+knuckleheads.add_player(player3)
+knuckleheads.play
+
+player4 = Player.new("janet")
+player5 = Player.new("jack", 60)
+player6 = Player.new("chrissy", 125)
+
+company = Game.new("Roommates")
+company.add_player(player4)
+company.add_player(player5)
+company.add_player(player6)
+company.play
