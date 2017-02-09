@@ -36,4 +36,14 @@ describe Player do
     
     expect(@player.health).to eq (@initial_health - 10)
   end
+  
+  context "created with a default health" do
+    before do
+      @player = Player.new("larry")
+    end
+    
+    it "has a health of 100" do
+      expect(@player.health).to eq (100)
+    end
+  end
 end
