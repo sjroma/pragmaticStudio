@@ -11,12 +11,12 @@ knuckleheads.add_player(player2)
 knuckleheads.add_player(player3)
 knuckleheads.play
 
-player4 = Player.new("janet")
-player5 = Player.new("jack", 60)
-player6 = Player.new("chrissy", 125)
+#player4 = Player.new("janet")
+#player5 = Player.new("jack", 60)
+#player6 = Player.new("chrissy", 125)
 
-company = Game.new("Roommates")
-company.add_player(player4)
-company.add_player(player5)
-company.add_player(player6)
-company.play
+#company = Game.new("Roommates")
+#company.add_player(player4)
+#company.add_player(player5)
+#company.add_player(player6)
+#company.play

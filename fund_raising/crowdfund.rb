@@ -2,9 +2,9 @@ require_relative 'fundrequest'
 require_relative 'project'
 
 
-project1 = Project.new("Project ABC", 1000, 5000)
-project2 = Project.new("Project LMN", 500, 3000)
-project3 = Project.new("Project XYZ", 25, 75)
+project1 = Project.new("Project ABC", 5000, 1000)
+project2 = Project.new("Project LMN", 3000, 500)
+project3 = Project.new("Project XYZ", 75, 25)
 
 projects = FundRequest.new("VC-Friendly Start-up Projects")
 puts projects.title
