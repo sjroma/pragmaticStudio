@@ -32,6 +32,10 @@ class Player
   def score
     @health + @name.length
   end
+  
+  def <=>(other)
+    other.score <=> score
+  end
 end
 
 if __FILE__ == $0
