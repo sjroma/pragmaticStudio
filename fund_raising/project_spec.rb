@@ -38,4 +38,25 @@ describe Project do
       expect(@project.funding).to eq(0)
     end
   end
+  
+  context 'when total funding outstanding is less than or equal to 0' do
+    before do
+      @project = Project.new("Project ABC", 5000, 5000)
+    end
+    
+    it 'is fully-funded' do
+      @project.should be_fully_funded
+    end
+  end
+  
+  context 'when total funding out standing is greater than 0' do
+    before do
+      @project = Project.new("Project ABC", 5000, 1000)
+    end
+    
+    it 'is under-funded' do
+      @project.should_not be_fully_funded
+    end
+  end
+  
 end

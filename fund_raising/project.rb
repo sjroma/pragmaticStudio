@@ -1,4 +1,5 @@
 class Project
+  
   attr_accessor :name
   attr_reader :funding, :target
   
@@ -25,6 +26,11 @@ class Project
   def total_funding_outstanding
     @target - @funding
   end
+  
+  def fully_funded?
+    total_funding_outstanding <= 0
+  end
+  
 end
 
 if __FILE__ == $0

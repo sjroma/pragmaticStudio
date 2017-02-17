@@ -11,4 +11,5 @@ puts projects.title
 projects.add_project(project1)
 projects.add_project(project2)
 projects.add_project(project3)
-projects.request_funding
+projects.request_funding(3)
+projects.print_results
