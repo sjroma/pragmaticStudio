@@ -35,4 +35,5 @@ describe "Game" do
     
     expect(@player.health).to eq(@initial_health - (10 * 2))
   end
+  
 end

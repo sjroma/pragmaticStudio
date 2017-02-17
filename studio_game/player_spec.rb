@@ -22,7 +22,7 @@ describe Player do
   end
   
   it "computes a score as a sum of its health and length of name" do
-    expect(@player.score).to eq (150 + 5)
+    expect(@player.score).to eq(150 + 5)
   end
   
   it "increases health by 15 when w00ted" do
@@ -45,6 +45,7 @@ describe Player do
     it "has a health of 100" do
       expect(@player.health).to eq(100)
     end
+    
   end
   
   context "with health greater than 100" do
@@ -55,6 +56,7 @@ describe Player do
     it "is strong" do
       expect(@player).to be_strong
     end
+    
   end
   
   context "with a health of 100 or less" do
@@ -78,7 +80,9 @@ describe Player do
     end
     
     it "is sorted by decreasing score" do
-      @players.sort.should == [@player3, @player2, @player1]
+      expect(@players.sort).to eq([@player3, @player2, @player1])
     end
+    
   end
+  
 end

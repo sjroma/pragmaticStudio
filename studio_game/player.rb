@@ -1,4 +1,5 @@
 class Player
+  
   attr_accessor :name
   attr_reader :health
   
@@ -36,6 +37,7 @@ class Player
   def <=>(other)
     other.score <=> score
   end
+  
 end
 
 if __FILE__ == $0
