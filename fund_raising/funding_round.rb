@@ -11,6 +11,9 @@ module FundingRound
     else
       project.add_funds
     end
+    
+    pledge = PledgePool.random
+    puts "#{project.name} received a #{pledge.name} pledge worth $#{pledge.amount}."
   end
   
 end
