@@ -1,5 +1,6 @@
 require_relative 'spec_helper'
 require_relative 'player'
+require_relative 'treasure_trove'
 
 describe Player do
   
@@ -10,7 +11,7 @@ describe Player do
   end
   
   it "has a capitalized name" do
-    expect(@player.name).to eq ("Larry")
+    expect(@player.name).to eq("Larry")
   end
   
   it "has an initial health" do
@@ -18,23 +19,42 @@ describe Player do
   end
   
   it "has a string representation" do
-    expect(@player.to_s).to eq ("I'm Larry with a health of 150 and a score of 155.")
-  end
-  
-  it "computes a score as a sum of its health and length of name" do
-    expect(@player.score).to eq(150 + 5)
+    @player.found_treasure(Treasure.new(:hammer, 50))
+    @player.found_treasure(Treasure.new(:hammer, 50))
+    
+    expect(@player.to_s).to eq("I'm Larry with health = 150, points = 100 and score = 250.")
   end
   
   it "increases health by 15 when w00ted" do
     @player.w00t
     
-    expect(@player.health).to eq (@initial_health + 15)
+    expect(@player.health).to eq(@initial_health + 15)
   end
   
   it "decreases health by 10 when blammed" do
     @player.blam
     
-    expect(@player.health).to eq (@initial_health - 10)
+    expect(@player.health).to eq(@initial_health - 10)
+  end
+  
+  it 'computes points as the sum of all treasure points' do
+    expect(@player.points).to eq(0)
+    
+    @player.found_treasure(Treasure.new(:hammer, 50))
+    expect(@player.points).to eq(50)
+    
+    @player.found_treasure(Treasure.new(:crowbar, 400))
+    expect(@player.points).to eq(450)
+    
+    @player.found_treasure(Treasure.new(:hammer, 50))
+    expect(@player.points).to eq(500)
+  end
+  
+  it "computes a score as a sum of its health and points" do
+    @player.found_treasure(Treasure.new(:hammer, 50))
+    @player.found_treasure(Treasure.new(:hammer, 50))
+    
+    expect(@player.score).to eq(250)
   end
   
   context "created with a default health" do

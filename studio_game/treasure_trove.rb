@@ -19,5 +19,5 @@ end
 if __FILE__ == $0
   puts TreasureTrove::TREASURES
   treasure = TreasureTrove.random
-  puts "You found a #{treasure.name} worth #{treasure.points} points"
+  puts "\nYou found a #{treasure.name} worth #{treasure.points} points"
 end
