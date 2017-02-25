@@ -1,5 +1,6 @@
 require_relative 'spec_helper'
 require_relative 'project'
+require_relative 'pledge_pool'
 
 describe Project do
   
@@ -17,13 +18,13 @@ describe Project do
     expect(@project.total_funding_outstanding).to eq(5000 - 1000)
   end
   
-  it "increases funds by 25 when funds are added" do
+  it "increases funds by $25 when funds are added" do
     @project.add_funds
     
     expect(@project.funding).to eq(@initial_funds + 25)
   end
   
-  it "decreases funds by 15 when funds are removed" do
+  it "decreases funds by $15 when funds are removed" do
     @project.remove_funds
     
     expect(@project.funding).to eq(@initial_funds - 15)
@@ -49,14 +50,37 @@ describe Project do
     end
   end
   
-  context 'when total funding out standing is greater than 0' do
+  context 'when total funding outstanding is greater than 0' do
     before do
       @project = Project.new("Project ABC", 5000, 1000)
     end
     
     it 'is under-funded' do
-      @project.should_not be_fully_funded
+      expect(@project).to_not be_fully_funded
     end
+  end
+  
+  it 'computes pledges as the sum of all pledges' do
+    @project.pledges.should == 0
+    
+    @project.received_pledge(Pledge.new(:silver, 75))
+    
+    expect(@project.pledges).to eq(75)
+    
+    @project.received_pledge(Pledge.new(:gold, 100))
+    
+    expect(@project.pledges).to eq(175)
+    
+    @project.received_pledge(Pledge.new(:gold, 100))
+    
+    expect(@project.pledges).to eq(275)
+  end
+  
+  it 'computes total funds as the sum of a projects funding and pledges' do
+    @project.received_pledge(Pledge.new(:gold, 100))
+    @project.received_pledge(Pledge.new(:gold, 100))
+    
+    expect(@project.total_funds).to eq(1200)
   end
   
 end

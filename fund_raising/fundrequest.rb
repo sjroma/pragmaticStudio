@@ -24,7 +24,7 @@ class FundRequest
     end
     
     pledges = PledgePool::PLEDGES
-    puts "\nThere are #{pledges.size} pledges to be awarded:"
+    puts "\nThere are #{pledges.size} possible pledge amounts:"
     pledges.each do |pledge|
       puts "A #{pledge.name} pledge is worth $#{pledge.amount}."
     end
@@ -38,8 +38,8 @@ class FundRequest
     end
   end
   
-  def print_name_and_funding(project)
-    puts "#{project.name} ($#{project.funding})" 
+  def print_name(project)
+    puts "#{project.name}"
   end 
   
   def print_results
@@ -48,7 +48,7 @@ class FundRequest
     
     puts "\n#{fully_funded_projects.size} Fully-funded Projects:"
     fully_funded_projects.each do |project|
-      print_name_and_funding(project)
+      print_name(project)
     end
     
     sorted_projects = under_funded_projects.sort { |a, b| b.total_funding_outstanding <=> a.total_funding_outstanding}

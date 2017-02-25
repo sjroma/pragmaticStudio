@@ -7,10 +7,11 @@ class Project
     @name = name
     @target = target_funding_amount
     @funding = funding
+    @received_pledge = Hash.new(0)
   end
   
   def to_s
-    "#{@name} has $#{@funding} in funding towards a goal of $#{@target}."
+    "#{@name} has $#{total_funds} in funding towards a goal of $#{@target}."
   end
  
   def add_funds
@@ -24,11 +25,25 @@ class Project
   end
   
   def total_funding_outstanding
-    @target - @funding
+    @target - total_funds
   end
   
   def fully_funded?
     total_funding_outstanding <= 0
+  end
+  
+  def received_pledge(pledge)
+    @received_pledge[pledge.name] += pledge.amount
+    puts "#{name} received a #{pledge.name} pledge worth $#{pledge.amount}"
+    puts "#{name}'s pledges: #{@received_pledge}"
+  end
+  
+  def pledges
+    @received_pledge.values.reduce(0, :+)
+  end
+  
+  def total_funds
+    @funding + pledges
   end
   
 end
