@@ -9,4 +9,11 @@
  | <sup>Commit all local changes in tracked files <br/> **$ git commit -a**<sup> | <sup>Delete a local branch <br/> **$ git branch -d \<branch\>**<sup> | <sup>Use your configured merge tool to solve conflicts <br/> **$ git mergetool**<sup> |
  | <sup>Commit previously staged changes <br/> **$git commit**<sup> | <sup>Mark the current commit with a tag <br/> **$ git tag \<tag-name\>**<sup> | <sup>Use your editor to manually solve conflicts and \(after resolving\) mark file as resolved <br/> **$ git add \<resolved-file\>** <br/> **$ git rm \<resolved-file\>**<sup> |
  | <sup>Change the last commit <br/> *Don't ammend published commits* <br/> **$ git commit --ammend**<sup>
+	 
+## GIT Cheat Sheet (con't)
+
+ COMMIT HISTORY | UPDATE & PUBLISH | UNDO
+     ---        |       ---        |  ---
+ <sup>Show all commits, sarting with newest <br/ **$ git log**><sup> | <sup>List all currently configured remotes <br/> **$ git remote -v**<sup> | <sup>Discard all local changes in your working directory <br/> **$ git reset --hard HEAD**<sup>
+<sup>Show changes over time for a specific file <br/> **$ git log -p \<file\>**<sup>
  
