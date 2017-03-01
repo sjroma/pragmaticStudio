@@ -2,6 +2,7 @@ require_relative 'player'
 require_relative 'die'
 require_relative 'game_turn'
 require_relative 'treasure_trove'
+require 'csv'
 
 class Game
   attr_reader :title
@@ -79,5 +80,12 @@ class Game
   
   def total_points
     @players.reduce(0) { |sum, player| sum + player.points }
+  end
+  
+  def load_players(from_file)
+    CSV.foreach(from_file) do |row|
+      player = Player.new(row[0], row[1].to_i)
+      add_player(player)
+    end
   end
 end
