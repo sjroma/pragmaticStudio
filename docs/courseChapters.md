@@ -6,7 +6,7 @@
  Chapter | Title                 | Notes
   ------ | --------------------- | -----------------------
  1       | Introduction          | Get Ruby up and running
- 2       | Running Ruby          | Run Ruby interactivly and in program files
+ 2       | Running Ruby          | Run Ruby interactively and in program files
  3       | Numbers & Strings     | Writing the first Ruby program
  4       | Variables & Objects   |
  5       | Self                  |
@@ -19,10 +19,10 @@
  12      | Unit Testing          | Using rspec for unit testing
  13      | Conditionals & TDD    | Test Driven Development
  14      | Modules               |
- 15      | Blocks                |
+ 15      | Blocks                | add'l course available [Mastering Ruby Blocks & Iterators](https://pragmaticstudio.com/ruby-blocks)
  16      | Symbols & Structs     |
  17      | Hashes                |
- 18      | Custom Inerators      |
+ 18      | Custom Iterators      | See Blocks notes re: add'l course
  19      | Input/Output          |
  20      | Inheritance           |
  21      | Mixins                |
