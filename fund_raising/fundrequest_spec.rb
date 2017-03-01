@@ -1,6 +1,5 @@
 require_relative 'spec_helper'
 require_relative 'fundrequest'
-require_relative 'die'
 
 describe 'FundRequest' do
   
@@ -17,7 +16,7 @@ describe 'FundRequest' do
     
     @fundrequest.request_funding(2)
     
-    @project.funding.should == @initial_funds + (25 * 2)
+    expect(@project.funding).to eq(@initial_funds + (25 * 2))
   end
   
   it 'removes funds from a project if an odd number is rolled' do
@@ -25,7 +24,7 @@ describe 'FundRequest' do
     
     @fundrequest.request_funding(2)
     
-    @project.funding.should == @initial_funds - (15 * 2)
+    expect(@project.funding).to eq(@initial_funds - (15 * 2))
   end
   
   it "assigns a pledge for amount during a project's funding round" do
@@ -36,7 +35,7 @@ describe 'FundRequest' do
     
     fundrequest.request_funding(1)
     
-    project.pledges.should_not be_zero
+    expect(project.pledges).not_to be_zero
   end
   
 end

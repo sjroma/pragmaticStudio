@@ -1,6 +1,5 @@
 require_relative 'spec_helper'
 require_relative 'project'
-require_relative 'pledge_pool'
 
 describe Project do
   
@@ -28,6 +27,49 @@ describe Project do
     @project.remove_funds
     
     expect(@project.funding).to eq(@initial_funds - 15)
+  end
+  
+  it 'computes pledges as the sum of all pledges' do
+    expect(@project.pledges).to eq(0)
+    
+    @project.received_pledge(Pledge.new(:silver, 75))
+    
+    expect(@project.pledges).to eq(75)
+    
+    @project.received_pledge(Pledge.new(:gold, 100))
+    
+    expect(@project.pledges).to eq(175)
+    
+    @project.received_pledge(Pledge.new(:gold, 100))
+    
+    expect(@project.pledges).to eq(275)
+  end
+  
+  it 'computes total funds as the sum of a projects funding and pledges' do
+    @project.received_pledge(Pledge.new(:gold, 100))
+    @project.received_pledge(Pledge.new(:gold, 100))
+    
+    expect(@project.total_funds).to eq(1200)
+  end
+  
+  it 'yields each received pledge and its total pledge amount' do
+    @project.received_pledge(Pledge.new(:bronze, 50))
+    @project.received_pledge(Pledge.new(:silver, 75))
+    @project.received_pledge(Pledge.new(:silver, 75))
+    @project.received_pledge(Pledge.new(:gold, 100))
+    @project.received_pledge(Pledge.new(:gold, 100))
+    @project.received_pledge(Pledge.new(:gold, 100))
+    
+    yielded = []
+    @project.each_received_pledge do |pledge|
+      yielded << pledge
+    end
+    
+    yielded.should == [
+      Pledge.new(:bronze, 50),
+      Pledge.new(:silver, 150),
+      Pledge.new(:gold, 300)
+    ]
   end
   
   context "created without a funding amount" do
@@ -58,29 +100,6 @@ describe Project do
     it 'is under-funded' do
       expect(@project).to_not be_fully_funded
     end
-  end
-  
-  it 'computes pledges as the sum of all pledges' do
-    @project.pledges.should == 0
-    
-    @project.received_pledge(Pledge.new(:silver, 75))
-    
-    expect(@project.pledges).to eq(75)
-    
-    @project.received_pledge(Pledge.new(:gold, 100))
-    
-    expect(@project.pledges).to eq(175)
-    
-    @project.received_pledge(Pledge.new(:gold, 100))
-    
-    expect(@project.pledges).to eq(275)
-  end
-  
-  it 'computes total funds as the sum of a projects funding and pledges' do
-    @project.received_pledge(Pledge.new(:gold, 100))
-    @project.received_pledge(Pledge.new(:gold, 100))
-    
-    expect(@project.total_funds).to eq(1200)
   end
   
 end

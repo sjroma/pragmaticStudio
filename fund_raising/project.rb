@@ -1,5 +1,6 @@
+require_relative 'pledge_pool'
+
 class Project
-  
   attr_accessor :name
   attr_reader :funding, :target
   
@@ -46,6 +47,11 @@ class Project
     @funding + pledges
   end
   
+  def each_received_pledge
+    @received_pledge.each do |name, amount|
+      yield Pledge.new(name, amount)
+    end
+  end
 end
 
 if __FILE__ == $0
