@@ -38,12 +38,17 @@ class FundRequest
   
   def print_name(project)
     puts "#{project.name}"
-  end 
+  end
+  
+  def fully_funded_projects
+    @projects.select { |project| project.fully_funded? }
+  end
+  
+  def under_funded_projects
+    @projects.reject { |project| project.fully_funded? }
+  end
   
   def print_results
-    fully_funded_projects = @projects.select { |project| project.fully_funded?}
-    under_funded_projects = @projects.reject { |project| project.fully_funded?}
-    
     puts "\n#{fully_funded_projects.size} Fully Funded Projects:"
     fully_funded_projects.each do |project|
       print_name(project)
@@ -54,10 +59,8 @@ class FundRequest
       print_name(project)
     end
     
-    sorted_projects = under_funded_projects.sort { |a, b| b.total_funding_outstanding <=> a.total_funding_outstanding}
-    
     puts "\n#{under_funded_projects.size} projects still need your help:"
-    sorted_projects.each do |project|
+    sorted_under_funded_projects.each do |project|
       formatted_name = project.name.ljust(20, '.')
       puts "#{formatted_name} $#{project.total_funding_outstanding} under"
     end
@@ -68,6 +71,28 @@ class FundRequest
         puts "$#{pledge.amount} in #{pledge.name} pledges"
       end
       puts "$#{project.pledges} in total pledges"
+    end
+  end
+  
+  def sorted_under_funded_projects
+    under_funded_projects.sort { |a, b| b.total_funding_outstanding <=> a.total_funding_outstanding }
+  end
+  
+  def load_projects(from_file)
+    File.readlines(from_file).each do |line|
+      name, target_funding_amount, funding = line.split(',')
+      project = Project.new(name, Integer(target_funding_amount), Integer(funding))
+      add_project(project)
+    end
+  end
+  
+  def save_under_funded_projects(to_file="needmoremoney.txt")
+    File.open(to_file, "w") do |file|
+      file.puts "These projects still need your help:"
+      sorted_under_funded_projects.each do |project|
+        formatted_name = project.name.ljust(20, '.')
+        file.puts "#{formatted_name} $#{project.total_funding_outstanding} under"
+      end
     end
   end
 end

@@ -1,4 +1,4 @@
-class Die  
+class Die
   attr_reader :number
   
   def initialize
@@ -8,7 +8,6 @@ class Die
   def roll
     @number = rand(1..6)
   end
-  
 end
 
 if __FILE__ == $0
