@@ -10,7 +10,7 @@ player3 = Player.new("curly", 125)
 knuckleheads = Game.new("Knuckleheads")
 knuckleheads.load_players(ARGV.shift || "players.csv")
 
-klutz = ClumsyPlayer.new("klutz", 105)
+klutz = ClumsyPlayer.new("klutz", 105, 3)
 knuckleheads.add_player(klutz)
 
 berserker = BerserkPlayer.new("berserker", 50)

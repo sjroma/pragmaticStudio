@@ -29,4 +29,22 @@ describe 'ClumsyPlayer' do
     
     expect(yielded).to eq([Treasure.new(:hammer, 75), Treasure.new(:crowbar, 200)])
   end
+  
+  context 'with a boost factor' do
+    before do
+      @initial_health = 100
+      @boost_factor = 5
+      @player = ClumsyPlayer.new("klutz", @initial_health, @boost_factor)
+    end
+    
+    it 'has a boost factor' do
+      expect(@player.boost_factor).to eq(5)
+    end
+    
+    it 'gets boost factor number of w00ts when w00ted' do
+      @player.w00t
+      
+      expect(@player.health).to eq(@initial_health + (15 * @boost_factor))
+    end
+  end
 end
