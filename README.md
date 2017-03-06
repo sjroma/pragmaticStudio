@@ -4,6 +4,7 @@
 * [Ruby rules](#ruby-rules-n-guidelines)
 * [Vocabulary](#vocabulary)
 * [Classes vs Objects](#classes-vs-objects)
+* [Classes vs Methods](#classes-vs-methods)
 
 # Ruby rules n guidelines
 * Use two spaces per indentation level (aka soft tabs)
@@ -31,12 +32,24 @@ the **variable** named _text_
 * Instance variables start with an **@ sign**
 
 ### Classes vs Objects
-Object | Class
- ---   |  ---
-  2    | Integer
-  -5   | Integer
-  7.2  | Float
-  3.14 | Float
-'hello'| String
-'world'| String
+Object  | Class
+ ---    |  ---
+ 2      | Integer
+ -5     | Integer
+ 7.2    | Float
+ 3.14   | Float
+ 'hello'| String
+ 'world'| String
+
+### Classes vs Modules
+
+ | CLASS | MODULE 
+ --- | --- | ---
+ Instantiation | Can be instantiated | Cannot be instantiated
+ Usage | object creation | Mixin facility. Provide a namespace.
+ Superclass | Module | Object
+ Methods | Class methods and instance methods | Module methods and instance methods
+ Inheritance | Inherits behavior and can be base for inheritance | No inheritance
+ Inclusion | Cannot be included | Can be included in classes and modules by using the include command <br/> <sup>(includes all instance methods as instance methods in a class/module)<sup>
+ Extension | Cannot extend with extend command <br/> <sup>(only with inheritance)<sup>
   
