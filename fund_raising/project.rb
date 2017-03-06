@@ -1,6 +1,9 @@
 require_relative 'pledge_pool'
+require_relative 'fundable'
 
 class Project
+  include Fundable
+  
   attr_accessor :name
   attr_reader :funding, :target
   
@@ -13,24 +16,6 @@ class Project
   
   def to_s
     "#{@name} has $#{total_funds} in funding towards a goal of $#{@target}."
-  end
- 
-  def add_funds
-    @funding += 25
-    puts "#{@name} got more funds!"
-  end
-  
-  def remove_funds
-    @funding -= 15
-    puts "#{@name} lost some funds!"
-  end
-  
-  def total_funding_outstanding
-    @target - total_funds
-  end
-  
-  def fully_funded?
-    total_funding_outstanding <= 0
   end
   
   def received_pledge(pledge)
