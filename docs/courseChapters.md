@@ -1,7 +1,7 @@
 
 [The Pragmatic Studio - Ruby Programming](https://pragmaticstudio.com/courses/ruby)
 
-* This course uses *Programming Ruby* by Dave Thomas as supplemental material
+##### This course uses *Programming Ruby* by Dave Thomas as supplemental material
 
  Chapter | Title | Notes
    ---   |   --- |   ---
