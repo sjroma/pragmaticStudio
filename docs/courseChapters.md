@@ -13,7 +13,7 @@
  <sup>6<sup> | <sup>Methods<sup> | | <sup>Chapter 8: **More About Methods**<sup>
  <sup>7<sup> | <sup>Classes<sup> | <sup>Getting into object-oriented programming<sup> | <sup>Chapter 3: **Classes, Objects and Variables**<sup>
  <sup>8<sup> | <sup>Attributes<sup> | | <sup>Section 3.1, **Objects and Attributes**<sup>
- <sup>9<sup> | <sup>Arrays<sup> | | <sup>Section 4.1, Arrays & Section 4.3, **Blocks and Iterators**<sup>
+ <sup>9<sup> | <sup>Arrays<sup> | | <sup>Section 4.1, **Arrays** & Section 4.3, **Blocks and Iterators**<sup>
  <sup>10<sup> | <sup>Objects Interacting<sup> | | <sup>Section 3.2, **Classes Working with Other Classes**<sup>
  <sup>11<sup> | <sup>Separate Source Files<sup> | | <sup>Chapter 16: **Namespaces, Source Files and Distribution**<sup>
  <sup>12<sup> | <sup>Unit Testing<sup> | <sup>Using rspec for unit testing<sup> | <sup>Chapter 13: **Unit Testing**<sup>
