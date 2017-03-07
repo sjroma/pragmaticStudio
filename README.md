@@ -30,8 +30,8 @@ the **variable** named _text_
 * Method names start with a **lowercase** letter    
 * Variable names start with a **lowercase** letter    
 * Instance variables start with an **@ sign**
-* Methods such as **each** that invoke a block of code repeatedly are often called **iteraterators because they
-iterate over the objects in a collection.
+* Methods such as **each** that invoke a block of code repeatedly are often called **iterators** because they
+iterate over the objects in a collection
 
 ### Classes vs Objects
 Object  | Class
