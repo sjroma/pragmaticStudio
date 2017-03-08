@@ -19,9 +19,13 @@ must be a lowercase letter or underscore
 # Vocabulary
 * In the following line of code, _capitalize_ is a **method** called on the **object** named _name_ and assigned to
 the **variable** named _text_    
-  ```text = "#{name.capitalize} has a health of #{health}"```
+  ```ruby 
+  text = "#{name.capitalize} has a health of #{health}"
+  ```
 * In the case of the line of code below, _center_ is a **method** that takes two **parameters**    
-  ```puts text.center(50, '*')```
+  ```ruby 
+  puts text.center(50, '*')
+  ```
 * A **class** is a factory (blueprint) that instantiates **objects (instances)**. 
 * Objects have unique **state** and a common set of **methods (behaviors)**.
 * An **instance** variable exists for the life of an **object**.
@@ -30,8 +34,7 @@ the **variable** named _text_
 * Method names start with a **lowercase** letter    
 * Variable names start with a **lowercase** letter    
 * Instance variables start with an **@ sign**
-* Methods such as **each** that invoke a block of code repeatedly are often called **iterators** because they
-iterate over the objects in a collection
+* Methods such as _each_ that invoke a block of code repeatedly are often called **iterators** because they iterate over the objects in a collection
 * By convention, multi-line blocks start with **do** and end with **end**
 * By convention, single line blocks start with **{** and end with **}**
 * Block parameters are always placed within **vertical bars (||)**
@@ -44,7 +47,18 @@ iterate over the objects in a collection
 end
 ```
 * In the example above, the block parameter is **count** and it is a **local** variable. Its value is filled in by the upto method and as a local variable, **count** is only accessible inside the block.
+* The _each_ method iterates through each element in a collection and assigns each element in turn to the **block parameter(s)**.
+* In the code below, **type** is the block parameter. Block parameters are **local** variables. They only live for the life of the block.
+```ruby
+flavors = ['chocolate', 'vanilla', 'cinnamon']
 
+flavors.each do |type|
+  puts type.reverse
+end
+```
+* In the example above, the code block is run 3 times, once for each element in the array
+
+---
 ### Objects vs Classes
 Object  | Class
  ---    |  ---
@@ -56,7 +70,6 @@ Object  | Class
  'world'| String
 
 ### Classes vs Modules
-
  | CLASS | MODULE 
  --- | --- | ---
  **Instantiation** | Can be instantiated | Cannot be instantiated
