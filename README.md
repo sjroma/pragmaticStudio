@@ -19,13 +19,13 @@ must be a lowercase letter or underscore
 # Vocabulary
 * In the following line of code, _capitalize_ is a **method** called on the **object** named _name_ and assigned to
 the **variable** named _text_    
-  ```ruby 
-  text = "#{name.capitalize} has a health of #{health}"
-  ```
+```ruby 
+text = "#{name.capitalize} has a health of #{health}"
+```
 * In the case of the line of code below, _center_ is a **method** that takes two **parameters**    
-  ```ruby 
-  puts text.center(50, '*')
-  ```
+```ruby 
+puts text.center(50, '*')
+```
 * A **class** is a factory (blueprint) that instantiates **objects (instances)**. 
 * Objects have unique **state** and a common set of **methods (behaviors)**.
 * An **instance** variable exists for the life of an **object**.
