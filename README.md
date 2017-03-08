@@ -3,7 +3,7 @@
 ### Table of Contents
 * [Ruby rules](#ruby-rules-n-guidelines)
 * [Vocabulary](#vocabulary)
-* [Classes vs Objects](#classes-vs-objects)
+* [Objects vs Classes](#objects-vs-classes)
 * [Classes vs Methods](#classes-vs-methods)
 
 # Ruby rules n guidelines
@@ -32,8 +32,20 @@ the **variable** named _text_
 * Instance variables start with an **@ sign**
 * Methods such as **each** that invoke a block of code repeatedly are often called **iterators** because they
 iterate over the objects in a collection
+* By convention, multi-line blocks start with **do** and end with **end**
+* By convention, single line blocks start with **{** and end with **}**
+* Block parameters are always placed within **vertical bars (||)**
+* In the example below, the value of the method parameter is *5*
+```ruby
+1.upto(5) do |count|
+  puts "#{count} situps"
+  puts "#{count} pushups"
+  puts "#{count} chinups"
+end
+```
+* In the example above, the block parameter is **count** and it is a **local** variable. Its value is filled in by the upto method and as a local variable, **count** is only accessible inside the block.
 
-### Classes vs Objects
+### Objects vs Classes
 Object  | Class
  ---    |  ---
  2      | Integer
@@ -47,11 +59,11 @@ Object  | Class
 
  | CLASS | MODULE 
  --- | --- | ---
- Instantiation | Can be instantiated | Cannot be instantiated
- Usage | object creation | Mixin facility. Provide a namespace.
- Superclass | Module | Object
- Methods | Class methods and instance methods | Module methods and instance methods
- Inheritance | Inherits behavior and can be base for inheritance | No inheritance
- Inclusion | Cannot be included | Can be included in classes and modules by using the include command <br/> <sup>(includes all instance methods as instance methods in a class/module)<sup>
- Extension | Cannot extend with extend command <br/> <sup>(only with inheritance)<sup> | Module can extend instance by using extend command <br/> <sup>(extends given instance with singleton methods from module)<sup>
+ **Instantiation** | Can be instantiated | Cannot be instantiated
+ **Usage** | object creation | Mixin facility. Provide a namespace.
+ **Superclass** | Module | Object
+ **Methods** | Class methods and instance methods | Module methods and instance methods
+ **Inheritance** | Inherits behavior and can be base for inheritance | No inheritance
+ **Inclusion** | Cannot be included | Can be included in classes and modules by using the include command <br/> <sup>(includes all instance methods as instance methods in a class/module)<sup>
+ **Extension** | Cannot extend with extend command <br/> <sup>(only with inheritance)<sup> | Module can extend instance by using extend command <br/> <sup>(extends given instance with singleton methods from module)<sup>
   
