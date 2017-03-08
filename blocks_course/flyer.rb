@@ -1,10 +1,12 @@
 class Flyer
   attr_reader :name, :email, :miles_flown
+  attr_accessor :status
   
-  def initialize(name, email, miles_flown)
+  def initialize(name, email, miles_flown, status=:bronze)
     @name = name
     @email = email
     @miles_flown = miles_flown
+    @status = status
   end
   
   def to_s
@@ -13,45 +15,25 @@ class Flyer
 end
 
 flyers = []
-1.upto(5) do |number|
-  flyers << Flyer.new("Flyer #{number}", "flyer#{number}@example.com", number * 1000)
-end
+flyers << Flyer.new("Larry", "larry@example.com", 4000, :platinum)
+flyers << Flyer.new("Moe", "moe@example.com", 1000)
+flyers << Flyer.new("Curly", "curly@example.com", 3000, :gold)
+flyers << Flyer.new("Shemp", "shemp@example.com", 2000)
 
-puts flyers
+# Id frequent flyer customers, those who have flown at least 3,000 miles, and print them out
+freqfly = flyers.select { |m| m.miles_flown >= 3000 }
+puts freqfly
 
-# Iterate through all flyers and print their name and miles flown
+# Id those flyers that need more incentive-those who flew less than 3,000 miles and print them out
 puts
-flyers.each do |flyer|
-  puts "#{flyer.name} - #{flyer.miles_flown} miles"
-end
+infreqfly = flyers.reject { |m| m.miles_flown >= 3000 }
+puts infreqfly
 
-# In a separate block tally up the total miles flown by all flyers and print out the total
+# Have any flyers achieved platinum status? Print the answer
 puts
-total = 0
-flyers.each do |flyer|
-  total += flyer.miles_flown
-end
-puts "Total miles flown: #{total}"
+puts flyers.any? { |flyer| flyer.status == :platinum }
 
-puts
-promotions = { "United" => 1.5, "Delta" => 2.0, "Lufthansa" => 2.5}
-promotions.each { |airline, promo| puts "Earn #{promo}x miles by flying #{airline}!"}
-
-#or, same as above
-# promotions.each do |airline, promo|
-#   puts "Earn #{promo}x miles by flying #{airline}!"
-# end
-
-# Iterators within Iterators - combine the two iterators to print out the miles each flyer would
-# earn by switching to each airline
-flyers.each do |flyer|
-  promotions.each do |airline, promo|
-    puts "#{flyer.name} could earn #{flyer.miles_flown * promo} miles by flying #{airline}"
-  end
-end
-
-puts
-desserts = { "chocolate" => 1.00, "vanilla" => 0.75, "cinnamon" => 1.25}
-desserts.each do |flavor, price|
-  puts "$#{price * 2} for a cup of #{flavor}."
-end
+# You want to call all of your bronze status flyers to encourage them move up to 
+# silver status.  Who is the first flyer on the call list?
+first_bronze_flyer = flyers.detect { |flyer| flyer.status == :bronze }
+puts first_bronze_flyer
