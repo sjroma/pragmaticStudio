@@ -51,3 +51,19 @@ puts "Total kilometers flown: #{total_kilometers}"
 puts
 total_kms = flyers.map { |flyer| flyer.miles_flown * 1.6}.reduce(0, :+)
 puts "Total kms flown: #{total_kms}"
+
+# Tally up all the kilometers flown by bronze flyers. Chain together several Enumerable
+# methods to compute the total.
+puts
+puts "Bonus Round"
+total_bronze_kms_flown = flyers.select { |f| f.status == :bronze }.map { |f| f.miles_flown * 1.6 }.reduce(:+)
+# or
+sum_bronze_kms_flown = flyers.select { |f| f.status == :bronze }.reduce(0) { |sum, f| sum + (f.miles_flown * 1.6) }
+puts "Total kilometers flown by bronze flyers: #{total_bronze_kms_flown}"
+puts "Total kms flown by bronze flyers: #{sum_bronze_kms_flown}"
+
+# The Enumerable module has a convenient method for finding an object that has the maximum
+# value returned from the given block: the max_by method.  Use it to find the top flyer.
+puts
+top_flyer = flyers.max_by { |flyer| flyer.miles_flown}
+puts "Top flyer: #{top_flyer}"
