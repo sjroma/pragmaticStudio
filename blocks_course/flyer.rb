@@ -20,20 +20,34 @@ flyers << Flyer.new("Moe", "moe@example.com", 1000)
 flyers << Flyer.new("Curly", "curly@example.com", 3000, :gold)
 flyers << Flyer.new("Shemp", "shemp@example.com", 2000)
 
-# Id frequent flyer customers, those who have flown at least 3,000 miles, and print them out
-freqfly = flyers.select { |m| m.miles_flown >= 3000 }
-puts freqfly
+# Divide the flyes in two camps: platinum and the others in coach.  Print out both groups
+platinum, others = flyers.partition { |flyer| flyer.status == :platinum}
+puts "Platinum flyers:"
+puts platinum
+puts "Coach flyers:"
+puts others
 
-# Id those flyers that need more incentive-those who flew less than 3,000 miles and print them out
+# Print friendly names tags that include the flyers name and status (upcased)
 puts
-infreqfly = flyers.reject { |m| m.miles_flown >= 3000 }
-puts infreqfly
+name_tag = flyers.map { |flyer| "#{flyer.name} (#{flyer.status.upcase})"}
+p name_tag
 
-# Have any flyers achieved platinum status? Print the answer
+# Lufthansa is graphing flyer data and has requested an array containing distances flown
+# by each flyer, expressed in kilometers rather than miles.  Make and print out the array.
 puts
-puts flyers.any? { |flyer| flyer.status == :platinum }
+kilometers_flown = flyers.map { |flyer| flyer.miles_flown * 1.6 }
+p kilometers_flown
 
-# You want to call all of your bronze status flyers to encourage them move up to 
-# silver status.  Who is the first flyer on the call list?
-first_bronze_flyer = flyers.detect { |flyer| flyer.status == :bronze }
-puts first_bronze_flyer
+# How many total miles have all the flyers flown?
+puts
+total_miles = flyers.reduce(0) { |sum, flyer| sum + flyer.miles_flown }
+puts "Total miles flown: #{total_miles}"
+
+# How many kilometers have all the flyers flown?
+puts
+total_kilometers = flyers.reduce(0) { |sum, flyer| sum + (flyer.miles_flown * 1.6) }
+puts "Total kilometers flown: #{total_kilometers}"
+#or
+puts
+total_kms = flyers.map { |flyer| flyer.miles_flown * 1.6}.reduce(0, :+)
+puts "Total kms flown: #{total_kms}"

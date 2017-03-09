@@ -1,4 +1,4 @@
-# Enumberables Part I
+puts "Enumerables Part I"
 # Given the following array:
 scores = [83, 71, 92, 64, 98, 87, 75, 69]
 # Iterate through scores and select those greater than 80. Store them in a new
@@ -33,3 +33,26 @@ p scores
 # Then permanently kick out all the even scores
 scores.reject! { |s| s.even? }
 p scores
+
+puts
+puts "Enumerables Part II"
+# Given the following array:
+scores = [83, 71, 92, 64, 98, 87, 75, 69]
+# Map the scores array into a new array called scores_doubled that contains all
+# the scores multiplied by 2
+scores_doubled = scores.map { |score| score * 2 }
+p scores_doubled
+
+# The class whose scores total more than 600 gets ice cream and the afternoon off.
+# Use the reduce method to sum up all the scores in the array and print the total.
+puts
+total = scores.reduce(0) { |sum, score| sum + score }
+puts "Total score: #{total}"
+
+# Partition the scores into two arrays called evens and odds and print them out
+puts
+evens, odds = scores.partition { |score| score.even? }
+puts "Evens:"
+p evens
+puts "Odds:"
+p odds
