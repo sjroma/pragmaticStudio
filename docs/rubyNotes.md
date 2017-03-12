@@ -3,9 +3,9 @@
 
 ### Table of Contents
 * [Ruby rules](#ruby-rules-n-guidelines)
-* [Vocabulary](#vocabulary)
 * [Objects vs Classes](#objects-vs-classes)
 * [Classes vs Methods](#classes-vs-methods)
+* [Vocabulary](#vocabulary)
 
 # Ruby rules n guidelines
 * Use two spaces per indentation level (aka soft tabs)
@@ -16,6 +16,7 @@ must be a lowercase letter or underscore
   * Method names may end with a question mark or an exclamation point.    
      * Question mark means the method _should_ return a boolean       
      * An exclamation point indicates the method will modify the object it is called on
+
 ---
 ### Objects vs Classes
 Object  | Class
