@@ -21,7 +21,7 @@
  <sup>14<sup> | <sup>Modules<sup> | | <sup>Section 5.2, **Modules**<sup>
  <sup>15<sup> | <sup>Blocks<sup> | <sup>add'l course available [Mastering Ruby Blocks & Iterators](https://pragmaticstudio.com/ruby-blocks)<sup> |
  <sup>16<sup> | <sup>Symbols & Structs<sup> | | <sup>Section 2.4, **Symbols**<sup>
- <sup>17<sup> | <sup>Hashes<sup> | <sup>Section 4.2, **Hashes**<sup>
+ <sup>17<sup> | <sup>Hashes<sup> | | <sup>Section 4.2, **Hashes**<sup>
  <sup>18<sup> | <sup>Custom Iterators<sup> | <sup>See Blocks notes re: add'l course<sup> |
  <sup>19<sup> | <sup>Input/Output<sup> | | <sup>Chapter 11: **Basic Input and Output**<sup>
  <sup>20<sup> | <sup>Inheritance<sup> | | <sup>Section 5.1, **Inheritance and Messages**<sup>
