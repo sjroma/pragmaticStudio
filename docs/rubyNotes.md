@@ -16,6 +16,29 @@ must be a lowercase letter or underscore
   * Method names may end with a question mark or an exclamation point.    
      * Question mark means the method _should_ return a boolean       
      * An exclamation point indicates the method will modify the object it is called on
+---
+### Objects vs Classes
+Object  | Class
+ ---    |  ---
+ 2      | Integer
+ -5     | Integer
+ 7.2    | Float
+ 3.14   | Float
+ 'hello'| String
+ 'world'| String
+
+### Classes vs Modules
+ | CLASS | MODULE 
+ --- | --- | ---
+ **Instantiation** | Can be instantiated | Cannot be instantiated
+ **Usage** | object creation | Mixin facility. Provide a namespace.
+ **Superclass** | Module | Object
+ **Methods** | Class methods and instance methods | Module methods and instance methods
+ **Inheritance** | Inherits behavior and can be base for inheritance | No inheritance
+ **Inclusion** | Cannot be included | Can be included in classes and modules by using the include command <br/> <sup>(includes all instance methods as instance methods in a class/module)<sup>
+ **Extension** | Cannot extend with extend command <br/> <sup>(only with inheritance)<sup> | Module can extend instance by using extend command <br/> <sup>(extends given instance with singleton methods from module)<sup>
+* Classes are about objects
+* Modules are about functions
 
 # Vocabulary
 * In the following line of code, _capitalize_ is a **method** called on the **object** named _name_ and assigned to
@@ -59,25 +82,4 @@ end
 ```
 * In the example above, the code block is run 3 times, once for each element in the array
 
----
-### Objects vs Classes
-Object  | Class
- ---    |  ---
- 2      | Integer
- -5     | Integer
- 7.2    | Float
- 3.14   | Float
- 'hello'| String
- 'world'| String
-
-### Classes vs Modules
- | CLASS | MODULE 
- --- | --- | ---
- **Instantiation** | Can be instantiated | Cannot be instantiated
- **Usage** | object creation | Mixin facility. Provide a namespace.
- **Superclass** | Module | Object
- **Methods** | Class methods and instance methods | Module methods and instance methods
- **Inheritance** | Inherits behavior and can be base for inheritance | No inheritance
- **Inclusion** | Cannot be included | Can be included in classes and modules by using the include command <br/> <sup>(includes all instance methods as instance methods in a class/module)<sup>
- **Extension** | Cannot extend with extend command <br/> <sup>(only with inheritance)<sup> | Module can extend instance by using extend command <br/> <sup>(extends given instance with singleton methods from module)<sup>
   
