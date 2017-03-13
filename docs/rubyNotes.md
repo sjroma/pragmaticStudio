@@ -42,6 +42,7 @@ Object  | Class
 
 * Classes are about objects
 * Modules are about functions
+
 ---
 # Vocabulary
 * In the following line of code, _capitalize_ is a **method** called on the **object** named _name_ and assigned to
