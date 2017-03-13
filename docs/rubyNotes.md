@@ -4,7 +4,7 @@
 ### Table of Contents
 * [Ruby rules](#ruby-rules-n-guidelines)
 * [Objects vs Classes](#objects-vs-classes)
-* [Classes vs Methods](#classes-vs-methods)
+* [Classes vs Modules](#classes-vs-modules)
 * [Vocabulary](#vocabulary)
 
 # Ruby rules n guidelines
@@ -28,6 +28,7 @@ Object  | Class
  'hello'| String
  'world'| String
 
+
 ### Classes vs Modules
  | CLASS | MODULE 
  --- | --- | ---
@@ -36,11 +37,12 @@ Object  | Class
  **Superclass** | Module | Object
  **Methods** | Class methods and instance methods | Module methods and instance methods
  **Inheritance** | Inherits behavior and can be base for inheritance | No inheritance
- **Inclusion** | Cannot be included | Can be included in classes and modules by using the include command <br/> <sup>(includes all instance methods as instance methods in a class/module)<sup>
- **Extension** | Cannot extend with extend command <br/> <sup>(only with inheritance)<sup> | Module can extend instance by using extend command <br/> <sup>(extends given instance with singleton methods from module)<sup>
+ **Inclusion** | Cannot be included | Can be included in classes and modules by using the include command <br/> <sup>\(includes all instance methods as instance methods in a class or module\)<sup>
+ **Extension** | Cannot extend with extend command <br/> <sup>\(only with inheritance\)<sup> | Module can extend instance by using extend command <br/> <sup>\(extends given instance with singleton methods from module\)<sup>
+
 * Classes are about objects
 * Modules are about functions
-
+---
 # Vocabulary
 * In the following line of code, _capitalize_ is a **method** called on the **object** named _name_ and assigned to
 the **variable** named _text_    
@@ -82,5 +84,3 @@ flavors.each do |type|
 end
 ```
 * In the example above, the code block is run 3 times, once for each element in the array
-
-  
