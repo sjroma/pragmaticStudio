@@ -10,9 +10,9 @@
  | <sup>Commit previously staged changes <br/> **$ git commit**<sup> | <sup>Mark the current commit with a tag <br/> **$ git tag \<tag-name\>**<sup> | <sup>Use your editor to manually solve conflicts and \(after resolving\) mark file as resolved <br/> **$ git add \<resolved-file\>** <br/> **$ git rm \<resolved-file\>**<sup> |
  | <sup>Change the last commit <br/> *Don't amend published commits* <br/> **$ git commit --amend**<sup>
 	 
-## GIT Cheat Sheet (con't)
+## GIT Cheat Sheet...con't
 
- COMMIT HISTORY | UPDATE & PUBLISH | UNDO
+ COMMIT HISTORY | UPDATE and PUBLISH | UNDO
      ---        |       ---        |  ---
  <sup>Show all commits, starting with newest <br/> **$ git log**<sup> | <sup>List all currently configured remotes <br/> **$ git remote -v**<sup> | <sup>Discard all local changes in your working directory <br/> **$ git reset --hard HEAD**<sup>
  <sup>Show changes over time for a specific file <br/> **$ git log -p \<file\>**<sup> | <sup>Show information about a remote <br/> **$ git remote show \<remote\>**<sup> | <sup>Discard local changes in a specific file <br/> **$ git checkout HEAD \<file\>**<sup>
