@@ -4,6 +4,8 @@
 # playlists.  A playlist is a collection  of songs.  Given a particular playlist
 # you want to provide a way to iterate though all the songs in that playlist.
 
+require_relative 'my_enumerable'
+
 class Song
   attr_reader :name, :artist, :duration
   
@@ -29,7 +31,8 @@ song2 = Song.new("As Good As I Once Was", "Toby Keith", 5)
 song3 = Song.new("Somewhere Over the Rainbow", "IZ", 4)
 
 class Playlist
-  include Enumerable
+  #include Enumerable
+  include MyEnumerable
   
   def initialize(name)
     @name = name
@@ -67,20 +70,20 @@ playlist.add_song(song3)
 
 #playlist.each { |song| song.play }
 puts
-love_songs = playlist.select { |song| song.name =~ /Love/ }
+love_songs = playlist.my_select { |song| song.name =~ /Love/ }
 p love_songs
 puts
-non_love_songs = playlist.reject { |song| song.name =~ /Love/ }
-p non_love_songs
+# non_love_songs = playlist.reject { |song| song.name =~ /Love/ }
+# p non_love_songs
 puts
-p playlist.any? { |song| song.artist == "IZ" }
-p playlist.detect { |song| song.artist == "IZ" }
+#p playlist.any? { |song| song.artist == "IZ" }
+#p playlist.detect { |song| song.artist == "IZ" }
 puts
-song_labels = playlist.map { |song| "#{song.name} - #{song.artist}"}
+song_labels = playlist.my_map { |song| "#{song.name} - #{song.artist}"}
 p song_labels
 puts
-total_duration = playlist.reduce(0) { |sum, song| sum + song.duration }
-p total_duration
+# total_duration = playlist.reduce(0) { |sum, song| sum + song.duration }
+# p total_duration
 puts
 playlist.each_tagline { |tagline| puts tagline }
 puts
