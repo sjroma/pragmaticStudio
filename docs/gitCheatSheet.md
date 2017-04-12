@@ -12,14 +12,14 @@
 	 
 ## GIT Cheat Sheet...con't
 
- COMMIT HISTORY | UPDATE and PUBLISH | UNDO
-     ---        |       ---        |  ---
- <sup>Show all commits, starting with newest <br/> **$ git log**<sup> | <sup>List all currently configured remotes <br/> **$ git remote -v**<sup> | <sup>Discard all local changes in your working directory <br/> **$ git reset --hard HEAD**<sup>
- <sup>Show changes over time for a specific file <br/> **$ git log -p \<file\>**<sup> | <sup>Show information about a remote <br/> **$ git remote show \<remote\>**<sup> | <sup>Discard local changes in a specific file <br/> **$ git checkout HEAD \<file\>**<sup>
- <sup>Who changed what and when in \<file\> <br/> **$ git blame \<file\>**<sup> | <sup>Add new remote repository, named \<remote\> <br/> **$ git remote add \<shortname\> \<url\>**<sup> | <sup>Revert a commit \(by producing a new commit with contrary changes\) <br/> **$ git revert \<commit\>**<sup>
- <sup>View change history of a file <br/> **$ git log \<filename\>**<sup> | <sup>Download all changes from \<remote\>, but don't integrate into HEAD <br/> **$ git fetch \<remote\>**<sup> | <sup>Reset your HEAD pointer to a previous commit <br/>...and discard all changes since then <br/> **$ git reset --hard \<commit\>**<sup> |
- | <sup>Download changes and directly merge/integrate into HEAD <br/> **$ git pull \<remote\> \<branch\>**<sup> | <sup>...and preserve all changes as unstaged changes <br/> **$ git reset \<commit\>**<sup> |
- | <sup>Publish local changes on a remote <br/> **$ git push \<remote\> \<branch\>**<sup> | <sup>...and preserve uncommitted local changes <br/> **$ git reset --keep \<commit\>**<sup> |
- | <sup>Delete a branch on the remote <br/> **$ git branch -dr \<remote/branch\>**<sup> |  |
- | <sup>Publish your tags <br/> **$ git push --tags**<sup>
+| COMMIT HISTORY | UPDATE and PUBLISH | UNDO |
+      ---        |       ---          |  ---
+| <sup>Show all commits, starting with newest <br/> **$ git log**<sup> | <sup>List all currently configured remotes <br/> **$ git remote -v**<sup> | <sup>Discard all local changes in your working directory <br/> **$ git reset --hard HEAD**<sup> |
+| <sup>Show changes over time for a specific file <br/> **$ git log -p \<file\>**<sup> | <sup>Show information about a remote <br/> **$ git remote show \<remote\>**<sup> | <sup>Discard local changes in a specific file <br/> **$ git checkout HEAD \<file\>**<sup> |
+| <sup>Who changed what and when in \<file\> <br/> **$ git blame \<file\>**<sup> | <sup>Add new remote repository, named \<remote\> <br/> **$ git remote add \<shortname\> \<url\>**<sup> | <sup>Revert a commit \(by producing a new commit with contrary changes\) <br/> **$ git revert \<commit\>**<sup> |
+| <sup>View change history of a file <br/> **$ git log \<filename\>**<sup> | <sup>Download all changes from \<remote\>, but don't integrate into HEAD <br/> **$ git fetch \<remote\>**<sup> | <sup>Reset your HEAD pointer to a previous commit <br/>...and discard all changes since then <br/> **$ git reset --hard \<commit\>**<sup> |
+| | <sup>Download changes and directly merge/integrate into HEAD <br/> **$ git pull \<remote\> \<branch\>**<sup> | <sup>...and preserve all changes as unstaged changes <br/> **$ git reset \<commit\>**<sup> |
+| | <sup>Publish local changes on a remote <br/> **$ git push \<remote\> \<branch\>**<sup> | <sup>...and preserve uncommitted local changes <br/> **$ git reset --keep \<commit\>**<sup> |
+| | <sup>Delete a branch on the remote <br/> **$ git branch -dr \<remote/branch\>**<sup> |  |
+| | <sup>Publish your tags <br/> **$ git push --tags**<sup> | |
  
