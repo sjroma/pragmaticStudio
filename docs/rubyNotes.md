@@ -30,15 +30,15 @@ Object  | Class
 
 
 ### Classes vs Modules
- | CLASS | MODULE 
- --- | --- | ---
- **Instantiation** | Can be instantiated | Cannot be instantiated
- **Usage** | object creation | Mixin facility. Provide a namespace.
- **Superclass** | Module | Object
- **Methods** | Class methods and instance methods | Module methods and instance methods
- **Inheritance** | Inherits behavior and can be base for inheritance | No inheritance
- **Inclusion** | Cannot be included | Can be included in classes and modules by using the include command <br/> <sup>\(includes all instance methods as instance methods in a class or module\)<sup>
- **Extension** | Cannot extend with extend command <br/> <sup>\(only with inheritance\)<sup> | Module can extend instance by using extend command <br/> <sup>\(extends given instance with singleton methods from module\)<sup>
+| | CLASS | MODULE | 
+| --- | --- | --- |
+| **Instantiation** | Can be instantiated | Cannot be instantiated |
+| **Usage** | object creation | Mixin facility. Provide a namespace. |
+| **Superclass** | Module | Object |
+| **Methods** | Class methods and instance methods | Module methods and instance methods |
+| **Inheritance** | Inherits behavior and can be base for inheritance | No inheritance |
+| **Inclusion** | Cannot be included | Can be included in classes and modules by using the include command <br/> \(includes all instance methods as instance methods in a class or module\) |
+| **Extension** | Cannot extend with extend command <br/> <sup>\(only with inheritance\)<sup> | Module can extend instance by using extend command <br/> <sup>\(extends given instance with singleton methods from module\)<sup> |
 
 * Classes are about objects
 * Modules are about functions
