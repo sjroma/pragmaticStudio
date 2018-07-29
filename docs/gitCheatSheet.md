@@ -22,4 +22,6 @@
 | | <sup>Publish local changes on a remote <br/> **$ git push \<remote\> \<branch\>**<sup> | <sup>\.\.\.and preserve uncommitted local changes <br/> **$ git reset --keep \<commit\>**<sup> |
 | | <sup>Delete a branch on the remote <br/> **$ git branch -dr \<remote/branch\>**<sup> | |
 | | <sup>Publish your tags <br/> **$ git push --tags**<sup> | |
- 
+
+* This table blatantly plagiarized from <a href="https://www.git-tower.com/blog/git-cheat-sheet" target="_blank">git-tower.com</a>  Visit their site to learn about their Git client and to sign up for this and five other cheat sheets.
+* This was an exercise for me in creating a document using Markdown
